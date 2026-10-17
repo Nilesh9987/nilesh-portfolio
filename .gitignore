@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Local development backups
+*.backup.txt
+*.backup.tsx
+*.backup.css
+*.motherboard-backup.txt

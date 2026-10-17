@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* =========================================
+   01. GLOBAL THEME
+========================================= */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +27,447 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   02. HERO ENTRANCE ANIMATIONS
+========================================= */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: heroFadeUp 1.2s ease-out both;
+}
+
+.hero-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.hero-delay-2 {
+  animation-delay: 0.5s;
+}
+
+.hero-delay-3 {
+  animation-delay: 0.8s;
+}
+
+/* =========================================
+   03. HERO VIDEO ANIMATIONS
+========================================= */
+
+@keyframes videoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.video-animate {
+  animation: videoFadeIn 1.5s ease-out 0.6s both;
+}
+
+.video-blend {
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 70% at center,
+    black 35%,
+    transparent 85%
+  );
+
+  mask-image: radial-gradient(
+    ellipse 70% 70% at center,
+    black 35%,
+    transparent 85%
+  );
+}
+
+.full-video-blend {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 15%,
+    rgba(0, 0, 0, 0.5) 25%,
+    black 40%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 15%,
+    rgba(0, 0, 0, 0.5) 25%,
+    black 40%
+  );
+}
+
+/* =========================================
+   04. NAVBAR
+========================================= */
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e7b75b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* =========================================
+   05. 3D MOTHERBOARD ANIMATIONS
+========================================= */
+
+@keyframes circuitPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    filter: brightness(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.8);
+  }
+}
+
+.circuit-led-active {
+  animation: circuitPulse 2s ease-in-out infinite;
+}
+
+@keyframes pcbCurrentFlow {
+  from {
+    stroke-dashoffset: 262;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* =========================================
+   06. FUTURE FRONTIER — 3D AI CUBES
+========================================= */
+
+@keyframes floatingCube {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes rotatingCube {
+  from {
+    transform: rotateX(-25deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(-25deg) rotateY(360deg);
+  }
+}
+
+.floating-cube {
+  animation: floatingCube 4s ease-in-out infinite;
+  transition: filter 300ms ease;
+}
+
+.floating-cube:hover {
+  filter: drop-shadow(0 0 22px rgba(88, 184, 255, 0.85));
+}
+
+.rotating-cube {
+  transform-style: preserve-3d;
+  animation: rotatingCube 16s linear infinite;
+}
+
+.floating-cube:hover .rotating-cube {
+  animation-duration: 7s;
+}
+
+.rotating-cube > div {
+  box-shadow:
+    inset 0 0 22px rgba(88, 184, 255, 0.25),
+    0 0 15px rgba(88, 184, 255, 0.25);
+
+  transition: box-shadow 0.3s ease;
+}
+
+.rotating-cube > div:hover {
+  box-shadow:
+    inset 0 0 30px rgba(88, 184, 255, 0.55),
+    0 0 28px rgba(88, 184, 255, 0.65);
+}
+
+/* =========================================
+   07. AI POPUP ANIMATION
+========================================= */
+
+@keyframes aiPopupEntrance {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(-12deg) scale(0.85) translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(900px) rotateX(0deg) scale(1) translateY(0);
+  }
+}
+
+.ai-popup-entrance {
+  animation: aiPopupEntrance 550ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  transform-origin: center;
+}
+
+/* =========================================
+   08. PROJECT CARD — CINEMATIC COIN TOSS
+========================================= */
+
+
+/* =========================================
+   08. PROJECT CARD — CINEMATIC COIN TOSS
+========================================= */
+
+/* Forward — 7.5 Spins */
+
+/* Forward Coin Toss — 4.5 Spins */
+
+/* Forward — 3 Spins + Back Reveal */
+@keyframes projectCoinToss {
+  from {
+    transform: rotateY(0deg) scale(1);
+  }
+
+  to {
+    transform: rotateY(1260deg) scale(1.06);
+  }
+}
+
+/* Reverse — 3 Spins + Front Reveal */
+@keyframes projectCoinTossReverse {
+  from {
+    transform: rotateY(1260deg) scale(1.06);
+  }
+
+  to {
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+
+
+/* Card Base */
+.project-flip-card {
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateY(0deg) scale(1);
+  transition: none;
+}
+
+/* Forward Animation */
+.project-flip-card.is-flipped {
+  animation: projectCoinToss 750ms linear both;
+}
+
+.project-flip-card.is-reversing {
+  animation: projectCoinTossReverse 750ms linear both;
+}
+
+
+
+
+/* Prevent mirrored faces during 3D rotation */
+
+/* Correct 3D Front and Back Faces */
+
+.project-flip-card {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.project-flip-front,
+.project-flip-back {
+  position: absolute;
+  inset: 0;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.project-flip-front {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+}
+
+.project-flip-back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+/* =========================================
+   09. SMARTPHONE PREVIEW REVEAL
+========================================= */
+
+.project-phone-preview {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px) scale(0.88);
+  pointer-events: none;
+
+  transition:
+    opacity 600ms ease,
+    transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    visibility 600ms;
+}
+
+.project-phone-preview.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* =========================================
+   10. CONTACT SECTION ANIMATIONS
+========================================= */
+
+@keyframes contactGlowFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translate(25px, -35px) scale(1.15);
+    opacity: 0.65;
+  }
+}
+
+.contact-glow-orb {
+  animation: contactGlowFloat 9s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.contact-glow-orb-delayed {
+  animation-delay: -4.5s;
+}
+
+/* =========================================
+   11. SCROLL REVEAL
+========================================= */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(55px);
+  filter: blur(6px);
+
+  transition:
+    opacity 850ms ease,
+    transform 850ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 850ms ease;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* =========================================
+   12. ACCESSIBILITY — REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate,
+  .video-animate,
+  .circuit-led-active,
+  .floating-cube,
+  .rotating-cube,
+  .ai-popup-entrance,
+  .contact-glow-orb {
+    animation: none;
+  }
+
+  .rotating-cube {
+    transform: rotateX(-25deg) rotateY(-35deg);
+  }
+
+  .project-flip-card {
+    transition: none;
+  }
+
+  .project-flip-card.is-flipped {
+    animation: none;
+    transform: rotateY(180deg);
+  }
+
+  .project-phone-preview {
+    transition: none;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  .floating-cube:hover .rotating-cube {
+    animation: none;
+  }
+
+  path[style*="pcbCurrentFlow"] {
+    animation: none !important;
+  }
+}
+/* Reverse Coin-Toss Animation — 7.5 Spins */
+
+
+/* Reverse 7.5-Spin Coin Toss */
+
+.project-flip-card.is-reversing {
+  animation: projectCoinTossReverse 950ms linear both;
+}
+/* Reveal Android Preview near final half-spin */
+
+.project-phone-preview.is-visible {
+  transition-delay: 675ms, 675ms, 675ms;
+}
+
+.project-phone-preview:not(.is-visible) {
+  transition-delay: 0ms;
 }
