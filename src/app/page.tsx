@@ -19,7 +19,7 @@ export default function Home() {
       <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#050A13] bg-[radial-gradient(ellipse_at_70%_35%,#123663_0%,#050A13_75%)] px-6 py-12 text-white md:flex-row md:bg-[url('/portfolio-continuation-background.jpg')] md:bg-cover md:bg-center md:bg-no-repeat md:px-16 md:py-0">
         {/* Full-Screen Cinematic Background Video */}
         <video
-          src="/portfolio-walking.mp4"
+          src="/Portfolio-walking.mp4"
           autoPlay
           muted
           loop
@@ -75,7 +75,7 @@ export default function Home() {
         {/* Mobile Walking Video */}
         <div className="mt-7 w-full md:hidden">
           <video
-            src="/portfolio-walking.mp4"
+            src="/Portfolio-walking.mp4"
             autoPlay
             muted
             loop
