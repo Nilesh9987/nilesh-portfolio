@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -16,6 +15,9 @@ const geistMono = Geist_Mono({
 const siteUrl = "https://nilesh-portfolio-omega.vercel.app";
 
 export const metadata: Metadata = {
+  verification: {
+    google: "zbbFyi_wy-1I_o64tx6i9nT4a--ESKgT6x-46QLeNG4",
+  },
   metadataBase: new URL(siteUrl),
 
   title: {
@@ -97,17 +99,13 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-export default function RootLayout({
-  children,
-}: LayoutProps<"/">) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
