@@ -29,6 +29,9 @@ const personSchema = {
     "Jetpack Compose",
     "Next.js",
   ],
+    "sameAs": [
+    "https://www.linkedin.com/in/nilesh-salvi-95b371167/",
+  ],
 };
 
 
