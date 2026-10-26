@@ -13,6 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = "https://nilesh-portfolio-omega.vercel.app";
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nilesh Salvi",
+  "url": "https://nilesh-portfolio-omega.vercel.app/",
+  "jobTitle": "Software Developer",
+  "description":
+    "Software developer focused on Java backend development, Android development, and real-world software products.",
+  "knowsAbout": [
+    "Java",
+    "Spring Boot",
+    "Android Development",
+    "Kotlin",
+    "Jetpack Compose",
+    "Next.js",
+  ],
+};
+
+
 
 export const metadata: Metadata = {
   verification: {
@@ -105,7 +124,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(personSchema),
+    }}
+  />
+  {children}
+</body>
     </html>
   );
 }
