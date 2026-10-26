@@ -104,7 +104,7 @@ export const metadata: Metadata = {
       "Java Backend • Android Development • Real-World Digital Products. Explore my projects, engineering skills and future technology roadmap.",
     images: [
       {
-        url: "/portfolio-hero.png",
+        url: "/portfolio-hero.webp",
         alt: "Nilesh Salvi Developer Portfolio",
       },
     ],
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     title: "Nilesh Salvi | Software Developer",
     description:
       "Explore my Java Backend, Android and real-world software development projects.",
-    images: ["/portfolio-hero.png"],
+    images: ["/portfolio-hero.webp"],
   },
 
   category: "technology",

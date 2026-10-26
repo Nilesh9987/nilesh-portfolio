@@ -24,7 +24,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          poster="/portfolio-hero.png"
+          poster="/portfolio-hero.webp"
           aria-hidden="true"
           className="full-video-blend absolute inset-0 hidden h-full w-full object-contain object-right md:block"
         />
@@ -81,7 +81,7 @@ export default function Home() {
             loop
             playsInline
             preload="metadata"
-            poster="/portfolio-hero.png"
+            poster="/portfolio-hero.webp"
             aria-label="Nilesh Salvi cinematic walking introduction"
             className="block h-auto w-full rounded-xl"
           />
